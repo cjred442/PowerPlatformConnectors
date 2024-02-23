@@ -807,6 +807,51 @@
       }
     }
   },
+  "/cas/api/v1/discovery/discovery_app/{app_id}/set_tagged/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "default": {
+            "description": "Operation Failed."
+          }
+        },
+        "operationId": "MCAS_TAG_APP_CUSTOM",
+        "summary": "Tag app with custom tag",
+        "description": "Tag app with custom tag by app ID",
+        "parameters": [
+          {
+            "name": "app_id",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "x-ms-summary": "Cloud Application",
+            "description": "Enter Cloud Application ID...",
+            "format": "int32"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "tag_name": {
+                  "type": "string",
+                  "description": "tag_name",
+                  "title": "tag_name"
+                }
+              },
+              "required": [
+                "tag_name"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
   "definitions": {
     "ActivitiesAPIResult": {
       "type": "object",
