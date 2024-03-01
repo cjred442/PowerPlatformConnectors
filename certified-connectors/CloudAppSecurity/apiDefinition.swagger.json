@@ -897,6 +897,42 @@
       }
     }
   },
+"/cas/api/v1/discovery/discovered_apps/": {
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "default": {
+            "description": "Operation Failed."
+          }
+        },
+        "operationId": "MCAS_GET_DISCOVERED_APPS",
+        "summary": "List all apps in discovered apps based on a filter query",
+        "description": "Retreive a list of apps in discovered apps based on a filter query",
+        "parameters": [
+           {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "filters": {
+                  "type": "string",
+                  "description": "filter",
+                  "title": "filter"
+                }
+              },
+              "required": [
+                "filters"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
   "definitions": {
     "ActivitiesAPIResult": {
       "type": "object",
